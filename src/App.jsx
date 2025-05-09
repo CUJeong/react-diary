@@ -3,6 +3,8 @@ import logo from "./assets/logo.png";
 import Home from "./pages/Home/Home"; // Home 컴포넌트 임포트. 이후 <Home />로 사용가능
 import Lotto from "./pages/Lotto/Lotto"; // Lotto 컴포넌트
 import Post from "./pages/Post/Post";
+import PostDetail from "./pages/Post/PostDetail";
+import PostWrite from "./pages/Post/PostWrite";
 import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -31,10 +33,9 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* 주소가 /일때는 이 자리에 Home 컴포넌트가 삽입, /lotto일때는 Lotto 컴포넌트가 삽입 */}
         <Route path="/lotto" element={<Lotto />} />
-
-        <Route path="/post" element={<Post />} />
+        {/* post 관련 화면들은 Post.jsx 내에서 라우팅 */}
+        <Route path="/post/*" element={<Post />} />
       </Routes>
-      
     </div>
   );
 }
